@@ -51,3 +51,25 @@ const books = [
 // Crea una variabile booleana (areAuthorsAdults) per verificare se gli autori sono tutti maggiorenni.
 // Ordina l’array authors in base all’età, senza creare un nuovo array.
 // (se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente)
+
+// Creare un array (authors) che contiene gli autori dei libri.
+const authors = books.map((book) => book.author)
+console.log(authors)
+
+// Crea una variabile booleana (areAuthorsAdults) per verificare se gli autori sono tutti maggiorenni.
+const areAuthorsAdults = authors.every((author) => author.age >= 18)
+console.log(areAuthorsAdults)
+
+// Ordina l'array authors in base all'età, senza creare un nuovo array
+authors.sort((a, b) => {
+	return a.age - b.age
+})
+console.log(authors)
+
+// Se areAuthorsAdult è true, ordina in ordine crescente, altrimenti in ordine decrescente
+if (areAuthorsAdults) {
+	authors.sort((a, b) => a.age - b.age)
+} else {
+	authors.sort((a, b) => b.age - a.age)
+}
+console.log(authors)
